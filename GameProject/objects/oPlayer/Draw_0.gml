@@ -4,19 +4,19 @@ draw_self();
 //For Corbin's sprites change the 0 to image_index
 //Also add an if/else for the direction the player is looking
 if(weapon==0){
-	draw_sprite(sPistol,0,x,y);
+	//draw_sprite(sPistol,0,x,y);
 }
 else if(weapon==1){
-	draw_sprite(sRifle,0,x,y);
+	//draw_sprite(sRifle,0,x,y);
 }
 else if(weapon==2){
-	draw_sprite(sShotgun,0,x,y);
+	//draw_sprite(sShotgun,0,x,y);
 }
 else if(weapon==3){
-	draw_sprite(sRocket,0,x,y);
+	//draw_sprite(sRocket,0,x,y);
 }
 else if(weapon==4){
-	draw_sprite(sGrenade,0,x,y);
+	//draw_sprite(sGrenade,0,x,y);
 }
 
 /*

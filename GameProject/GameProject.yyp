@@ -383,6 +383,14 @@
             }
         },
         {
+            "Key": "80183180-ea16-47d2-9ab9-edde33b056a4",
+            "Value": {
+                "id": "590e6721-e3bf-497b-baa0-90a125d53e8f",
+                "resourcePath": "sprites\\sprBGJungle2\\sprBGJungle2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "84093aed-d2ca-47c2-93f2-dd9fe600668e",
             "Value": {
                 "id": "b6a8f6df-882e-4315-9dfa-b4969640617e",
@@ -403,6 +411,14 @@
             "Value": {
                 "id": "ba514ca4-d036-4e40-b49a-b85a0f6ef017",
                 "resourcePath": "sprites\\sBeast\\sBeast.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "88d565a1-4071-479e-91f1-b943e5b6840c",
+            "Value": {
+                "id": "4bc3b862-7ef1-423c-9c8f-8ec4bd893924",
+                "resourcePath": "sprites\\sprBGJungle1\\sprBGJungle1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -836,6 +852,14 @@
                 "id": "9bce8329-ecba-4a3d-bc12-21c9b03cbc7a",
                 "resourcePath": "objects\\oIndestructible\\oIndestructible.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "ea56eaeb-7182-4357-bb85-e76614f5d1e1",
+            "Value": {
+                "id": "abf545d9-8488-40b1-8ea7-6e7832d02771",
+                "resourcePath": "sprites\\sprBGJungle3\\sprBGJungle3.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

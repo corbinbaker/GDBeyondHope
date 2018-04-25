@@ -64,12 +64,12 @@ if(stick_l_v < 0){							// if the stick is to the top move up
 
 
 if( grav<0 ){								// If jumping check above player
-    sprite_index = sJump;
+    //sprite_index = sJump;
 } else {									// otherwise, falling so check UNDER the player
     if(jump){								// if coming down after jumping display the correct sprite
-        sprite_index = sJumpFall;
+        //sprite_index = sJumpFall;
     } else if(fall){						// if falling from an edge display the fall sprite
-        sprite_index = sFall;    
+       // sprite_index = sFall;    
     } else {								// if not already falling or jumping
 		grav = 0;							// first stop falling (used for ladders)
 		fall = true;						// flag that we are falling
@@ -83,7 +83,22 @@ if( grav<0 ){								// If jumping check above player
 		if((c1 == 1) || (c2 == 1) || (c3 == 1) || (c1 == 3) || (c2 == 3) || (c3 == 3)){
 			// if the tile we are intersecting with cannot be fallen through
 			y = real(y&$ffffffc0);			// move the sprite to the top of the tile
-			sprite_index = choose(sIdle1);	// set the sprite to the idle sprite
+			if(weapon==0){
+				sprite_index = choose(sPistol);
+			}
+			else if(weapon==1){
+				sprite_index = choose(sRifle);
+			}
+			else if(weapon==2){
+				sprite_index = choose(sShotgun);
+			}
+			else if(weapon==3){
+				sprite_index = choose(sRocket);
+			}
+			else if(weapon==4){
+				sprite_index = choose(sGrenade);
+			}
+				// set the sprite to the idle sprite
 			climbing = false;				// stop any climbing
 			jump = false;					// stop any jumping
 			fall = false;					// stop any falling
@@ -106,7 +121,7 @@ if((rolled<1)&&((keyboard_check(ord("A"))) || (oGame.button_down_left == true) |
 	climbing = false;						// since we are moving left we are not climbing
 	can_climb = false;						// and we cannot climb
     if(!jump && !fall && !crouch){						// if we are not jumping or falling
-        sprite_index = sWalk;				// set the sprite to walking
+        //sprite_index = sWalk;				// set the sprite to walking
     }
 	if(!crouch){
 		x=x-xspeed								// move the player left
@@ -141,7 +156,7 @@ if((rolled<1)&&((keyboard_check(ord("A"))) || (oGame.button_down_left == true) |
 	climbing = false;						// set that we are not climbing
 	can_climb = false;						// set that we cant climb
     if(!jump && !fall && !crouch){						// if we are not jumping or falling
-        sprite_index = sWalk;				// set the sprite to walking
+        //sprite_index = sWalk;				// set the sprite to walking
     }
 	if(!crouch){
 		x=x+xspeed;								// move the player right
@@ -172,7 +187,7 @@ if((rolled<1)&&((keyboard_check(ord("A"))) || (oGame.button_down_left == true) |
 	//}
 	
 } else if(!can_climb){						// if we are not moving left or right check that we are not climbing
-	sprite_index = choose(sIdle1,sIdle2);	// set the sprite to one of the idles (choose at random)
+	//sprite_index = choose(sIdle1,sIdle2);	// set the sprite to one of the idles (choose at random)
 	image_speed = anim_speed;				// set the speed of the sprite to the correct level
 }
 /////////////////////
@@ -195,7 +210,7 @@ if(can_climb){									// if we can climb
 		if(climbing){							// if we are climbing
 			jump = false;						// make sure we are not jumping
 			fall = false;						// make sure that we are not falling
-			sprite_index = sClimb;				// set the sprite to climbing
+			//sprite_index = sClimb;				// set the sprite to climbing
 			image_speed = 0						// stop the animation from playing as we are controlling that manually
 			x = real(x&$ffffffc0)+oGame.tilesize-(sprite_get_width(sprite_index)/2);	// make sure that the player stays on the ladder
 		}
@@ -372,6 +387,7 @@ if(keyboard_check(vk_shift)){
 		weaponAmmo[weapon]--;
 		//PISTOL
 		if(weapon==0){
+			//sprite_index = sPistol;
 			weaponAmmo[weapon]=-1;
 			//Looking Left
 			if(dir==1){
@@ -445,6 +461,7 @@ if(keyboard_check(vk_shift)){
 		}
 		//RIFLE
 		else if(weapon==1){
+			//sprite_index = sRifle;
 			weaponAmmo[weapon]-=2;
 			//Looking Left
 			if(dir==1){
@@ -534,6 +551,7 @@ if(keyboard_check(vk_shift)){
 		}
 		//Shotgun
 		else if(weapon==2){
+		//sprite_index = sShotgun;
 			//Looking Left
 			if(dir==1){
 				if(looking=0){
@@ -622,6 +640,8 @@ if(keyboard_check(vk_shift)){
 		}
 		//Rocket
 		else if(weapon==3){
+			
+		//sprite_index = sRocket;
 			//Looking Left
 			if(dir==1){
 				if(looking=0){
@@ -694,6 +714,8 @@ if(keyboard_check(vk_shift)){
 		}
 		//Grenade
 		else if(weapon==4){
+			
+		//sprite_index = sGrenade;
 			//Looking Left
 			if(dir==1){
 				if(looking=0){

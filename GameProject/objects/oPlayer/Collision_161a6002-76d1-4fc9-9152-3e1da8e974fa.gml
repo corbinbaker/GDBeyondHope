@@ -2,5 +2,5 @@
 // You can write your code in this editor
 if(invul<0){
 	hp--;				// reduce the players health
-	invul=5;
+	invul=50;
 }
